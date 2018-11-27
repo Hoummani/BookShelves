@@ -1,0 +1,32 @@
+<div class="container">
+  <br>
+  <div class="card" style="box-shadow: 1px 1px 5px lightgray">
+    <fieldset>
+      <div class="card-header">
+        <legend>Creer un nouveau livre</legend>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="bookForm" (ngSubmit)="onSaveBook()">
+          <div class="container">
+
+          </div>
+
+          <div class="form-group">
+            <label for="title">Titre :</label>
+            <input type="text" class="form-control" id="title" name="title" formControlName="title" placeholder="Titre..">
+          </div>
+
+          <div class="form-group">
+            <label for="author">Auteur :</label>
+            <input type="text" class="form-control" id="author" name="author" formControlName="author" placeholder="Auteur..">
+          </div>
+
+
+          <button type="submit" [disabled]="bookForm.invalid"  class="btn btn-primary">Ajouter</button>
+        </form>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+

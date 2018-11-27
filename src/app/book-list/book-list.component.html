@@ -1,0 +1,20 @@
+<div class="container">
+  <br>
+  <h2 style="color: #5a6268">Vos livres </h2>
+  <br>
+
+  <div class="card" style="width: 18rem;" *ngFor="let book of books; let i = index">
+    <h4 style="color: #7f3f00" *ngIf="i==0">Votre liste est vide !</h4>
+    <img class="card-img-top" src="assets/css/images/house.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{book.title}}</h5>
+      <p class="card-text">L'auteur de ce livre est :<strong>{{book.author}}</strong></p>
+      <button class="btn btn-primary" (click)="onViewBook(i)">Detail</button>
+      <button class="btn btn-danger pull-4" (click)="onDeleteBook(book)">Supprimer</button>
+    </div>
+  </div>
+
+  <br>
+  <button (click)="onNewBook()" class="btn btn-primary">Nouveau Livre</button>
+
+</div>

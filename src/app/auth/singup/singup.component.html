@@ -1,0 +1,32 @@
+<div class="container">
+  <br>
+  <div class="card" style="box-shadow: 1px 1px 5px lightgray">
+    <fieldset>
+      <div class="card-header">
+        <legend>Creer un nouveau compte</legend>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+          <div class="container">
+            <p class="text-danger">{{ errorMessage }}</p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email" placeholder="Email Address..">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" class="form-control" id="password" name="password" formControlName="password"  placeholder="Mot de Passe..">
+
+          </div>
+
+
+          <button type="submit" [disabled]="signUpForm.invalid"  class="btn btn-primary">Ajouter</button>
+        </form>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
